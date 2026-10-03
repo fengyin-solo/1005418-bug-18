@@ -12,6 +12,8 @@ export const MODULES: ModuleMeta[] = [
     actions: ["提交核查", "列入重点防范", "登记消除"],
     actionTargets: {"提交核查": "建档中", "列入重点防范": "重点防范", "登记消除": "已消除"},
     metrics: ["重点防范隐患点", "待核查隐患点", "威胁人数合计"],
+    // 隐患点状态只按 待核查 → 建档中 → 重点防范 → 已消除 固定次序推进，跳步一律不认。
+    linearFlow: true,
   },
   {
     key: "slope",

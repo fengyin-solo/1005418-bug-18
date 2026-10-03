@@ -18,6 +18,8 @@ export type ModuleMeta = {
   actions: string[]
   actionTargets: Record<string, string>
   metrics: string[]
+  // 为 true 时动作只能把状态沿 statuses 往后推一步，插队、跳跃一律拒绝。
+  linearFlow?: boolean
 }
 
 export type PageResult = {
@@ -30,6 +32,7 @@ export type PageResult = {
 export type ActionResult = {
   ok: boolean
   message: string
+  id?: number
 }
 
 export type OverviewResult = {
